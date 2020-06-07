@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".activity.SettingActivity">
+
+    <Switch
+        android:id="@+id/switch_daily"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/daily_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_change_languange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@android:color/white"
+        android:text="@string/change_language"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/switch_daily"
+        app:layout_constraintStart_toStartOf="@+id/switch_daily"
+        app:layout_constraintTop_toBottomOf="@+id/switch_daily" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

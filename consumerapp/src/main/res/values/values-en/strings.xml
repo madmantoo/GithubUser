@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Github User</string>
+    <string name="name">Name</string>
+    <string name="search">Search</string>
+    <string name="location">Location</string>
+    <string name="username">Username</string>
+    <string name="hint_username">Enter Username</string>
+    <string name="type">Type</string>
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="bahasa">Change Language</string>
+    <string name="hapus">Delete</string>
+    <string name="favorite">favorite</string>
+    <string name="delete">delete</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="change_language">Change Language</string>
+    <string name="setting">Setting</string>
+    <string name="set_reminder_success">Success active reminder</string>
+    <string name="set_reminder_off">Success nonactive reminder</string>
+    <string name="msg_daily">Lets find user popular user on Github</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="title_delete">Delete Favorit</string>
+    <string name="ask_delete">Are you sure want to delete this user from list favorite ?</string>
+
+    //toast
+    <string name="success_delete">Succes delete user from list favorite</string>
+    <string name="fail_delete">Fail delete user from list favorite</string>
+    <string name="success_add">Succes add user from list favorite</string>
+    <string name="fail_add">Fail add user from list favorite</string>
+    <string name="no_data">No data</string>
+</resources>

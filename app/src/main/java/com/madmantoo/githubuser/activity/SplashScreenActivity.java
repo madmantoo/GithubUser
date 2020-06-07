@@ -1,0 +1,30 @@
+package com.madmantoo.githubuser.activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Window;
+
+import com.madmantoo.githubuser.R;
+
+public class SplashScreenActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_splash_screen);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent main = new Intent(SplashScreenActivity.this, MainActivity.class);
+                startActivity(main);
+                finish();
+            }
+        }, 2000);
+    }
+}

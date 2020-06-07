@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Github User</string>
+    <string name="name">Nama</string>
+    <string name="search">Cari</string>
+    <string name="location">lokasi</string>
+    <string name="username">Username</string>
+    <string name="hint_username">Masukan Username</string>
+    <string name="type">Tipe</string>
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="bahasa">Ganti Bahasa</string>
+    <string name="favorite">favorite</string>
+    <string name="daily_reminder">Notifikasi Harian</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="setting">Pengaturan</string>
+    <string name="set_reminder_success">Berhasil mengaktifkan pengingat</string>
+    <string name="set_reminder_off">Berhasil menonaktifkan pengingat</string>
+    <string name="msg_daily">Ayo temukan pengguna terpopuler hari ini</string>
+
+    //dialog
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="title_delete">Hapus Favorit</string>
+    <string name="ask_delete">Apakah anda yakin ingin menghapus user dari list favorit?</string>
+
+    //toast
+    <string name="success_delete">Berhasil mengahapus user dari list favorit</string>
+    <string name="fail_delete">Gagal menghapus user dari list favorit</string>
+    <string name="success_add">Berhasil menambahkan user ke list favorit</string>
+    <string name="fail_add">Gagal menambah user ke list favorit</string>
+
+    <string name="appwidget_text">FAVORITE USER</string>
+    <string name="empty_text">NO DATA</string>
+    <string name="Image">Gambar</string>
+</resources>
