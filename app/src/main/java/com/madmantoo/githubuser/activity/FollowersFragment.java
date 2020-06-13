@@ -28,14 +28,12 @@ public class FollowersFragment extends Fragment {
 
     public static String USERNAME = "username";
     private FollowersViewModel followersViewModel;
-    private RecyclerView rvFollowers;
     private FollowersAdapter adapter;
     private ProgressBar progressBar;
 
     public FollowersFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,9 +46,14 @@ public class FollowersFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rvFollowers = view.findViewById(R.id.rv_followers);
+        RecyclerView rvFollowers = view.findViewById(R.id.rv_followers);
         progressBar = view.findViewById(R.id.progress_bar_followers);
+
         rvFollowers.setHasFixedSize(true);
+        rvFollowers.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter = new FollowersAdapter();
+        adapter.notifyDataSetChanged();
+        rvFollowers.setAdapter(adapter);
     }
 
     @Override
@@ -60,8 +63,6 @@ public class FollowersFragment extends Fragment {
         showRecycle();
         showLoading(true);
 
-        rvFollowers.setHasFixedSize(true);
-
         if (getArguments() != null) {
             String username = getArguments().getString(USERNAME);
             followersViewModel.setFollowers(username);
@@ -69,11 +70,6 @@ public class FollowersFragment extends Fragment {
     }
 
     private void showRecycle() {
-        rvFollowers.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new FollowersAdapter();
-        adapter.notifyDataSetChanged();
-        rvFollowers.setAdapter(adapter);
-
         followersViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel.class);
 
         followersViewModel.getFollowers().observe(getViewLifecycleOwner(), new Observer<ArrayList<FollowerItems>>() {

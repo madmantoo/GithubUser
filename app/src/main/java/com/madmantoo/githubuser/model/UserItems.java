@@ -8,8 +8,6 @@ public class UserItems implements Parcelable {
     private String username;
     private String name;
     private String location;
-    private String followers;
-    private String following;
     private String imgPhoto;
     private String type;
 
@@ -58,22 +56,6 @@ public class UserItems implements Parcelable {
         this.location = location;
     }
 
-    public String getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(String followers) {
-        this.followers = followers;
-    }
-
-    public String getFollowing() {
-        return following;
-    }
-
-    public void setFollowing(String following) {
-        this.following = following;
-    }
-
     public String getImgPhoto() {
         return imgPhoto;
     }
@@ -101,8 +83,6 @@ public class UserItems implements Parcelable {
         dest.writeString(username);
         dest.writeString(name);
         dest.writeString(location);
-        dest.writeString(followers);
-        dest.writeString(following);
         dest.writeString(imgPhoto);
         dest.writeString(type);
     }
@@ -112,8 +92,6 @@ public class UserItems implements Parcelable {
         username = in.readString();
         name = in.readString();
         location = in.readString();
-        followers = in.readString();
-        following = in.readString();
         imgPhoto = in.readString();
         type = in.readString();
     }

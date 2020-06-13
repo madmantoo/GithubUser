@@ -28,14 +28,12 @@ import java.util.ArrayList;
 public class FollowingFragment extends Fragment {
     public static String USERNAME = "username";
     private FollowingViewModel followingViewModel;
-    private RecyclerView rvFollowing;
     private FollowingAdapter adapter;
     private ProgressBar progressBar;
 
     public FollowingFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,9 +46,14 @@ public class FollowingFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rvFollowing = view.findViewById(R.id.rv_following);
+        RecyclerView rvFollowing = view.findViewById(R.id.rv_following);
         progressBar = view.findViewById(R.id.progress_bar_following);
+
         rvFollowing.setHasFixedSize(true);
+        rvFollowing.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter = new FollowingAdapter();
+        adapter.notifyDataSetChanged();
+        rvFollowing.setAdapter(adapter);
     }
 
     @Override
@@ -60,8 +63,6 @@ public class FollowingFragment extends Fragment {
         showRecycle();
         showLoading(true);
 
-        rvFollowing.setHasFixedSize(true);
-
         if (getArguments() != null) {
             String username = getArguments().getString(USERNAME);
             followingViewModel.setFolowing(username);
@@ -69,11 +70,6 @@ public class FollowingFragment extends Fragment {
     }
 
     private void showRecycle() {
-        rvFollowing.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new FollowingAdapter();
-        adapter.notifyDataSetChanged();
-        rvFollowing.setAdapter(adapter);
-
         followingViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel.class);
 
         followingViewModel.getFollowing().observe(getViewLifecycleOwner(), new Observer<ArrayList<FollowingItems>>() {
